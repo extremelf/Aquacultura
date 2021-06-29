@@ -1,0 +1,119 @@
+package com.aquacultura.DAL;
+
+
+import javax.persistence.*;
+import java.util.Collection;
+import java.util.Objects;
+
+@Entity
+@Table(name = "cliente", schema = "projeto", catalog = "")
+@NamedQueries({
+        @NamedQuery(name = "Cliente.findAll", query = "SELECT a FROM ClienteEntity a"),
+        @NamedQuery(name = "Cliente.findById", query = "SELECT a FROM ClienteEntity a WHERE a.idcliente = :idCliente"),
+        @NamedQuery(name = "Cliente.findByCC", query = "SELECT a FROM ClienteEntity a WHERE a.cc = :cc"),
+        @NamedQuery(name = "Cliente.findByNome", query = "SELECT a FROM ClienteEntity a WHERE a.nome = :nome")
+})
+public class ClienteEntity {
+    private long idcliente;
+    private String nome;
+    private String nomerua;
+    private String codigopostal;
+    private Long numeroporta;
+    private Long contacto;
+    private Long cc;
+    private Long contacorrente;
+
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    @Column(name = "idcliente", nullable = false, precision = 0)
+    public long getIdcliente() {
+        return idcliente;
+    }
+
+    public void setIdcliente(long idcliente) {
+        this.idcliente = idcliente;
+    }
+
+    @Basic
+    @Column(name = "nome", nullable = true, length = 30)
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    @Basic
+    @Column(name = "nomerua", nullable = true, length = 30)
+    public String getNomerua() {
+        return nomerua;
+    }
+
+    public void setNomerua(String nomerua) {
+        this.nomerua = nomerua;
+    }
+
+    @Basic
+    @Column(name = "codigopostal",insertable = false,updatable = false, nullable = true, length = 20)
+    public String getCodigopostal() {
+        return codigopostal;
+    }
+
+    public void setCodigopostal(String codigopostal) {
+        this.codigopostal = codigopostal;
+    }
+
+    @Basic
+    @Column(name = "numeroporta", nullable = true, precision = 0)
+    public Long getNumeroporta() {
+        return numeroporta;
+    }
+
+    public void setNumeroporta(Long numeroporta) {
+        this.numeroporta = numeroporta;
+    }
+
+    @Basic
+    @Column(name = "contacto", nullable = true, precision = 0)
+    public Long getContacto() {
+        return contacto;
+    }
+
+    public void setContacto(Long contacto) {
+        this.contacto = contacto;
+    }
+
+    @Basic
+    @Column(name = "cc", nullable = true, precision = 0)
+    public Long getCc() {
+        return cc;
+    }
+
+    public void setCc(Long cc) {
+        this.cc = cc;
+    }
+
+    @Basic
+    @Column(name = "contacorrente", nullable = true, precision = 0)
+    public Long getContacorrente() {
+        return contacorrente;
+    }
+
+    public void setContacorrente(Long contacorrente) {
+        this.contacorrente = contacorrente;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ClienteEntity that = (ClienteEntity) o;
+        return idcliente == that.idcliente && Objects.equals(nome, that.nome) && Objects.equals(nomerua, that.nomerua) && Objects.equals(codigopostal, that.codigopostal) && Objects.equals(numeroporta, that.numeroporta) && Objects.equals(contacto, that.contacto) && Objects.equals(cc, that.cc) && Objects.equals(contacorrente, that.contacorrente);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idcliente, nome, nomerua, codigopostal, numeroporta, contacto, cc, contacorrente);
+    }
+}

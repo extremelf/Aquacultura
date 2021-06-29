@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="506.0" prefWidth="781.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.aquacultura.controllers.Controller">
+    <children>
+      <VBox layoutY="100.0" prefHeight="406.0" prefWidth="214.0" style="-fx-background-color: #0033cc;">
+         <children>
+            <Button graphicTextGap="10.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="214.0" style="-fx-background-color: #0033cc #0033cc;" text="Cliente" textFill="WHITE">
+               <font>
+                  <Font name="Roboto" size="16.0" />
+               </font>
+            </Button>
+            <Button focusTraversable="false" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="214.0" style="-fx-background-color: #0033cc;" text="Fornecedor" textFill="WHITE">
+               <font>
+                  <Font name="Roboto" size="16.0" />
+               </font>
+            </Button>
+            <Button graphicTextGap="10.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="214.0" style="-fx-background-color: #0033cc;" text="Manutenção" textFill="WHITE">
+               <font>
+                  <Font name="Roboto" size="16.0" />
+               </font>
+            </Button>
+            <Button graphicTextGap="10.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="214.0" style="-fx-background-color: #0033cc;" text="Funcionarios" textFill="WHITE">
+               <font>
+                  <Font name="Roboto" size="16.0" />
+               </font>
+            </Button>
+            <Button graphicTextGap="10.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="214.0" style="-fx-background-color: #0033cc;" text="Encomendas" textFill="WHITE">
+               <font>
+                  <Font name="Roboto" size="16.0" />
+               </font>
+            </Button>
+            <Button graphicTextGap="10.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="214.0" style="-fx-background-color: #0033cc;" text="Lotes" textFill="WHITE">
+               <font>
+                  <Font name="Roboto" size="16.0" />
+               </font>
+            </Button>
+            <Button graphicTextGap="10.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="214.0" style="-fx-background-color: #0033cc;" text="Tanques" textFill="WHITE">
+               <font>
+                  <Font name="Roboto" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="logoutButton" alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#logout" prefHeight="37.0" prefWidth="214.0" style="-fx-background-color: #0033cc;" text="Logout" textFill="WHITE">
+               <VBox.margin>
+                  <Insets top="150.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+        <Pane prefHeight="102.0" prefWidth="214.0" style="-fx-background-color: #0033cc;">
+            <children>
+                <ImageView fitHeight="79.0" fitWidth="76.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Fish_Icon.png" />
+                    </image>
+                </ImageView>
+                <Label layoutX="93.0" layoutY="37.0" text="DocaPesca" textFill="WHITE">
+                    <font>
+                        <Font name="Noto Serif Regular" size="21.0" />
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+      <TableView fx:id="tabelaCliente" editable="true" layoutX="214.0" onSort="#startTabela" prefHeight="290.0" prefWidth="567.0">
+        <columns>
+          <TableColumn fx:id="idRow" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="nomeRow" prefWidth="75.0" text="Nome" />
+            <TableColumn fx:id="moradaRow" prefWidth="131.0" text="Morada" />
+            <TableColumn fx:id="contactoRow" prefWidth="93.0" text="Contacto" />
+            <TableColumn fx:id="ccRow" prefWidth="87.0" text="CC" />
+            <TableColumn fx:id="contaCorrenteRow" prefWidth="107.0" text="Conta Corrente" />
+        </columns>
+      </TableView>
+      <TextField layoutX="227.0" layoutY="327.0" />
+      <TextField layoutX="416.0" layoutY="327.0" />
+      <TextField layoutX="603.0" layoutY="327.0" />
+      <TextField layoutX="416.0" layoutY="372.0" />
+      <TextField layoutX="603.0" layoutY="372.0" />
+      <Label layoutX="227.0" layoutY="311.0" text="Nome" />
+      <Label layoutX="416.0" layoutY="311.0" text="Rua" />
+      <Label layoutX="603.0" layoutY="311.0" text="Numero da porta" />
+      <Label layoutX="227.0" layoutY="356.0" text="Codigo Postal" />
+      <Label layoutX="416.0" layoutY="356.0" text="CC" />
+      <Label layoutX="603.0" layoutY="356.0" text="email" />
+      <ComboBox layoutX="227.0" layoutY="372.0" prefHeight="24.0" prefWidth="164.0" />
+      <Button layoutX="648.0" layoutY="430.0" mnemonicParsing="false" style="-fx-background-color: #0033cc;" text="Submeter" textFill="WHITE" />
+    </children>
+</AnchorPane>
